@@ -34,11 +34,10 @@ class Scraper
     profile_page = Nokogiri::HTML(html)
     student = {}
 
-    #Iterate through the student, adding their profile_quote and bio to the hash
-    profile_page.css("div.student-card").each do |profile_entry|
-      student[:profile_quote] << profile_entry.css("div.profile-quote").text
-      student[:bio] << profile_entry.css("div.description-holder>p").text
-    end
+    #Add the profile quote and the bio to the student hash of attributes
+    student[:profile_quote] << profile_url.css("div.profile-quote").text
+    student[:bio] << profile_url.css("div.description-holder>p").text
+    
     #Iterate through the student again, grabbing any links they appear and adding them to the hash
     #profile_page.css("div.social-container a").each do |link|
       #if link.css("img.social-icon").attribute("src").value == linkedin_src
