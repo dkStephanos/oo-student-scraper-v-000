@@ -32,6 +32,7 @@ class Scraper
 
     html = File.read(profile_url)
     profile_page = Nokogiri::HTML(html)
+    student = {}
 
     #Iterate through the student, adding their profile_quote and bio to the hash
     profile_page.css("div.student-card").each do |profile_entry|
