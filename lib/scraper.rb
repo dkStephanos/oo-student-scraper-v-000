@@ -36,9 +36,8 @@ class Scraper
 
     #Iterate through the student, adding their profile_quote and bio to the hash
     profile_page.css("div.student-card").each do |profile_entry|
-      student = {
-        :profile_quote => profile_entry.css("div.profile-quote").text,
-        :bio => profile_entry.css("div.description-holder>p").text
+        student[:profile_quote] << profile_entry.css("div.profile-quote").text,
+        student[:bio] << profile_entry.css("div.description-holder>p").text
       }
     end
     #Iterate through the student again, grabbing any links they appear and adding them to the hash
