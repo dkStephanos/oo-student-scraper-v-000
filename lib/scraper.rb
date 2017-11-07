@@ -44,17 +44,13 @@ class Scraper
     profile_page.css("div.social-container a").each do |link|
       if link.css("img.social-icon").attribute("src").value == linkedin_src
         student[:linkedin] => link.css("a")[0]["href"]
-      end
-      if link.css("img.social-icon").attribute("src").value == facebook_src
+      elsif link.css("img.social-icon").attribute("src").value == facebook_src
         student[:facebook] => link.css("a")[0]["href"]
-      end
-      if link.css("img.social-icon").attribute("src").value == twitter_src
+      elsif link.css("img.social-icon").attribute("src").value == twitter_src
         student[:twitter] => link.css("a")[0]["href"]
-      end
-      if link.css("img.social-icon").attribute("src").value == github_src
+      elsif link.css("img.social-icon").attribute("src").value == github_src
         student[:github] => link.css("a")[0]["href"]
-      end
-      if link.css("img.social-icon").attribute("src").value == youtube_src
+      elsif link.css("img.social-icon").attribute("src").value == youtube_src
         student[:youtube] => link.css("a")[0]["href"]
       end
     end
