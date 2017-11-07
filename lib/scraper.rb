@@ -40,17 +40,17 @@ class Scraper
     tester = profile_page.css("img.social-icon").attribute("src").value
     #binding.pry
     #Iterate through the student again, grabbing any links they appear and adding them to the hash
-    profile_page.css("img.social-icon").each do |link|
+    profile_page.css("div.social-icon-container img.social-icon").each do |link|
       if link.attribute("src").value == linkedin_src
-        student[:linkedin] = profile_page.css("div.social-icon-container>a")[0]["href"]
+        student[:linkedin] = profile_page.css("a")[0]["href"]
       elsif link.attribute("src").value == facebook_src
-        student[:facebook] = profile_page.css("div.social-icon-container>a")[0]["href"]
+        student[:facebook] = profile_page.css("a")[0]["href"]
       elsif link.attribute("src").value == twitter_src
-        student[:twitter] = profile_page.css("div.social-icon-container>a")[0]["href"]
+        student[:twitter] = profile_page.css("a")[0]["href"]
       elsif link.attribute("src").value == github_src
-        student[:github] = profile_page.css("div.social-icon-container>a")[0]["href"]
+        student[:github] = profile_page.css("a")[0]["href"]
       elsif link.attribute("src").value == youtube_src
-        student[:youtube] = profile_page.css("div.social-icon-container>a")[0]["href"]
+        student[:youtube] = profile_page.css("a")[0]["href"]
       end
     end
 
