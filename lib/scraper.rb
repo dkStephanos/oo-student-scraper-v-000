@@ -43,7 +43,7 @@ class Scraper
     profile_page.css("div.social-icon-container a").each do |link|
       binding.pry
       if link.css("img.social-icon").attribute("src").value == linkedin_src
-        student[:linkedin] = link[0]["href"]
+        student[:linkedin] = link.attribute.value
       elsif link.css("img.social-icon").attribute("src").value == facebook_src
         student[:facebook] = link.css("a")[0]["href"]
       elsif link.css("img.social-icon").attribute("src").value == twitter_src
