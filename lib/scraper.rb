@@ -44,7 +44,7 @@ class Scraper
     profile_page.css("div.social-icon-container a").each do |link|
       if link.css("a")[0]["href"].split(".")[1] == "linkedin"
         student[:linkedin] = link.css("a")[0]["href"]
-      
+
       end
     end
 
