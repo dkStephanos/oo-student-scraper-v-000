@@ -38,7 +38,7 @@ class Scraper
     student[:profile_quote] = profile_page.css("div.profile-quote").text
     student[:bio] = profile_page.css("div.description-holder>p").text
     tester = profile_page.css("img.social-icon").attribute("src").value
-    binding.pry
+    #binding.pry
     #Iterate through the student again, grabbing any links they appear and adding them to the hash
     profile_page.css("img.social-icon").each do |link|
       if link.attribute("src").value == linkedin_src
