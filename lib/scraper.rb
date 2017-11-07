@@ -4,7 +4,7 @@ require 'pry'
 
 class Scraper
 
-  def self.scrape_profile_page(index_url)
+  def self.scrape_index_page(index_url)
     html = File.read(index_url)
     profile_page = Nokogiri::HTML(html)
     students = []
