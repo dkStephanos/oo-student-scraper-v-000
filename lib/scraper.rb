@@ -30,7 +30,7 @@ class Scraper
     github_src = "../assets/img/github-icon.png"
     youtube_src = "../assets/img/rss-icon.png"
 
-    html = File.read(index_url)
+    html = File.read(profile_url)
     profile_page = Nokogiri::HTML(html)
 
     #Iterate through the student, adding their profile_quote and bio to the hash
