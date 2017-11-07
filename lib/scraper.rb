@@ -37,7 +37,8 @@ class Scraper
     #Add the profile quote and the bio to the student hash of attributes
     student[:profile_quote] = profile_page.css("div.profile-quote").text
     student[:bio] = profile_page.css("div.description-holder>p").text
-    puts profile_page.css("img.social-icon").attribute("src").value
+    binding.pry
+    profile_page.css("img.social-icon").attribute("src").value
 
     #Iterate through the student again, grabbing any links they appear and adding them to the hash
     profile_page.css("div.social-container a").each do |link|
