@@ -29,6 +29,7 @@ class Scraper
     twitter_src = "../assets/img/twitter-icon.png"
     github_src = "../assets/img/github-icon.png"
     youtube_src = "../assets/img/rss-icon.png"
+    blog_src = "../assets/img/rss-icon.png"
 
     html = File.read(profile_url)
     profile_page = Nokogiri::HTML(html)
